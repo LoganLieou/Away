@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+## Away
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A really busted modern latex editor.
 
-## Available Scripts
+This came to me while using notion and I was like this is really pretty too bad
+all the latex editors are doo doo pee pee water. So I decided this sounds
+really easy so I wrote my own.
 
-In the project directory, you can run:
+As of right now the only thing that this does is allow you to edit text, so this
+is still a work in progress below I underline some features and how to achieve
+these features
 
-### `npm start`
+## Features and How to Implement
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Reading and Writing Files - file io with electron to local device bc you can't
+do this from react as it expects you to be in the web browser, I mean you could
+probably read files with a drag and drop but I'm not entirely sure how to write
+files, there's a really scuffed way to do this as well by implementing an api
+from the application to the local machine you can write files by listening for
+some request
+- Various latex templates documents etc. just load a bunch of templates so ez
+this is what overleaf does anyway it's community sourced but for here I can just
+have some basic templates that I use since the use case seems to be personal
+- pdf viewer, it's a browser lol just view the pdf you can use PDF.js this
+should just be built into electron I'm p sure
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Usage
 
-### `npm test`
+there's 3 commands in `package.json` and here's how they work since I any %'d
+this project the whole thing is really shit
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`npm run dev` - normal in browser react live server
 
-### `npm run build`
+`npm build` - builds the electron app so you can `npm run prod`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+`npm run prod` - runs the electron app is not live must be built to see changes
